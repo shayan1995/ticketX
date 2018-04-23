@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  performer: MyString
+  location: MyString
+  name: MyString
+  price: 9.99
+
+two:
+  performer: MyString
+  location: MyString
+  name: MyString
+  price: 9.99
