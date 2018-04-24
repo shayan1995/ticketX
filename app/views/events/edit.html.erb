@@ -1,2 +1,20 @@
 <h1>Events#edit</h1>
 <p>Find me in app/views/events/edit.html.erb</p>
+
+<%= form_tag events_edit_path(id:@event) do %>
+  <%= label_tag(:name, "Name") %>
+  <%= text_field_tag(:name, @event_name, placeholder: @event_name) %>
+  <br>
+  <%= label_tag(:location, "Location") %>
+  <%= text_field_tag(:location, @event_location, placeholder: @event_location) %>
+  <br>
+  <%= label_tag(:performer, "Performer") %>
+  <%= text_field_tag(:performer,  @event_perform, placeholder: @event_perform) %>
+  <br>
+  <%= label_tag(:price, "Price") %>
+  <%= text_field_tag(:price, @event_price, placeholder: @event_price) %>
+  <br>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+  <%= submit_tag("Update") %>
+<% end %>

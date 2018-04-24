@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   root to: 'events#index'
   get 'events/index'
+  get 'events/show', as: "show"
   get 'events/new',  as: "new"
   get 'events/show'
   get 'events/edit', as: "edit"
   get 'events/destroy'
+  get 'events/buy', as: "buy"
 
   devise_for :users
   resources :users
@@ -12,7 +14,9 @@ Rails.application.routes.draw do
   #
   #
   post "events/new", to: 'events#create'
-  patch "events/edit", to:"events#update"
+  post "events/edit", to:"events#update"
+  patch "events/show", to:'events#show'
+  patch "events/edit", to:"events#edit"
 
 
 

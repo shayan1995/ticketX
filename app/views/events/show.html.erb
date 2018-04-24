@@ -1,2 +1,13 @@
 <h1>Events#show</h1>
 <p>Find me in app/views/events/show.html.erb</p>
+
+<p>Name: <%= @event.name%></p>
+<p>Location: <%=@event.location%></p>
+<p>Performer: <%=@event.performer%></p>
+<p>Price: <%=@event.price%></p>
+<%= button_to "Buy", buy_path(id: @event), :class => "button medium", :method => :patch %>
+<% if current_user.email == @event.user.email %>
+  <%= button_to "Edit", edit_path(id: @event), :class => "button medium", :method => :patch %>
+<% end %>
+
+<%= button_to "Back To Home", root_path, :class => "button medium", :method => :get %>

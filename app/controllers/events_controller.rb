@@ -25,17 +25,31 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+
   end
 
   def edit
     @event = Event.find(params[:id])
+    @event_name = @event.name
+    @event_location = @event.location
+    @event_perform = @event.performer
+    @event_price = @event.price
   end
 
   def buy
     @event = Event.find(params[:id])
+
   end
 
   def update
+    @event = Event.find(params[:id])
+    if @event.update_attributes(event_params)
+
+      redirect_to root_path
+    else
+      flash[:error] = @event.errors.full_messages.to_sentence
+      redirect_to edit_path
+    end
   end
 
   def destroy
@@ -45,7 +59,7 @@ class EventsController < ApplicationController
   private
 
     def event_params
-      params.require(:event).permit(:name, :location, :perform, :price)
+      params.permit(:name, :location, :performer, :price)
     end
 
 end

@@ -1,19 +1,19 @@
 <h1>Events#new</h1>
 <p>Find me in app/views/events/new.html.erb</p>
 
-<%= form_tag events_path do %>
+<%= form_tag events_new_path do %>
   <%= label_tag(:name, "Name") %>
   <%= text_field_tag(:name, nil, placeholder: @event_name) %>
-
+  <br>
   <%= label_tag(:location, "Location") %>
   <%= text_field_tag(:location, nil, placeholder: @event_location) %>
-
-  <%= label_tag(:perform, "Performer") %>
-  <%= text_field_tag(:perform, nil, placeholder: @event_perform) %>
-
+  <br>
+  <%= label_tag(:performer, "Performer") %>
+  <%= text_field_tag(:performer, nil, placeholder: @event_perform) %>
+  <br>
   <%= label_tag(:price, "Price") %>
   <%= text_field_tag(:price, nil, placeholder: @event_price) %>
-
+  <br>
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
   <%= submit_tag("Create") %>
