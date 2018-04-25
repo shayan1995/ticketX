@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   patch "events/show", to:'events#show'
   patch "events/edit", to:"events#edit"
 
+  resources :charges
+
 
 
   
