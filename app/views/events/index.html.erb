@@ -1,12 +1,15 @@
 <h1>Events#index</h1>
 <p>Find me in app/views/events/index.html.erb</p>
-<% if current_user%>
+<% if current_user %>
   <%= button_to "Sign out", destroy_user_session_path, :class => "button medium", :method => :delete %>
+  <% if current_user.fName == "Host" %>
+    <%= button_to "Create", new_path, :class => "button medium", :method => :get %>
+  <% end %>
 <% else %>
-  <%= button_to "Sign in",  new_user_session, :class => "button medium", :method => :get %>
+  <%= button_to "Sign in",  new_user_session_path, :class => "button medium", :method => :get %>
 <% end %>
 
-<%= button_to "Create", new_path, :class => "button medium", :method => :get %>
+
 
 <% @events.each do |e| %>
 
@@ -18,6 +21,7 @@
     <%= button_to "Buy", buy_path(id: e), :class => "button medium", :method => :patch %>
     <% if current_user == e.user %>
       <%= button_to "Edit", edit_path(id: e), :class => "button medium", :method => :patch %>
+
     <% end %>
 
 

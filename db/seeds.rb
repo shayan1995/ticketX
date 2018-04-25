@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 %w(Ash Gary Misty Brock).each do |name|
-  User.create! fName: name, email: name+"@ticketX.com", password: 'password'
+  User.create! fName: 'non', email: name+"@ticketX.com", password: 'password'
 end
 
 
@@ -17,7 +17,7 @@ end
     location: loc,
     performer: perf,
     price: price,
-    user: User.find(1)
+    user: User.find(11)
   )
 
 end
