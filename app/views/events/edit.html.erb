@@ -14,6 +14,12 @@
   <%= label_tag(:price, "Price") %>
   <%= text_field_tag(:price, @event_price, placeholder: @event_price) %>
   <br>
+  <%= label_tag(:max_ticket, "Tickets Available") %>
+  <%= text_field_tag(:max_ticket, @event_max_ticket, placeholder: @event_max_ticket) %>
+  <br>
+  <%= label_tag(:descrip, "Description") %>
+  <%= text_field_tag(:descrip, @event_descrip, placeholder: @event_descrip) %>
+  <br>
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
   <%= submit_tag("Update") %>

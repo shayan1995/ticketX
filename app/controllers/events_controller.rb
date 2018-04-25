@@ -34,6 +34,8 @@ class EventsController < ApplicationController
     @event_location = @event.location
     @event_perform = @event.performer
     @event_price = @event.price
+    @event_max_ticket = @event.max_ticket
+    @event_descrip = @event.descrip
   end
 
   def buy
@@ -53,13 +55,16 @@ class EventsController < ApplicationController
   end
 
   def destroy
+
+    @event = Event.find(params[:id])
+
   end
 
 
   private
 
     def event_params
-      params.permit(:name, :location, :performer, :price)
+      params.permit(:name, :location, :performer, :price, :descrip, :max_ticket)
     end
 
 end

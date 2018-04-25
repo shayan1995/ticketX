@@ -1,5 +1,10 @@
 <h1>Events#index</h1>
 <p>Find me in app/views/events/index.html.erb</p>
+<% if current_user%>
+  <%= button_to "Sign out", destroy_user_session_path, :class => "button medium", :method => :delete %>
+<% else %>
+  <%= button_to "Sign in",  new_user_session, :class => "button medium", :method => :get %>
+<% end %>
 
 <%= button_to "Create", new_path, :class => "button medium", :method => :get %>
 
@@ -11,9 +16,10 @@
     <p>Price: <%=e.price%></p>
     <%= button_to "Details", show_path(id: e), :class => "button medium", :method => :patch %>
     <%= button_to "Buy", buy_path(id: e), :class => "button medium", :method => :patch %>
-    <% if current_user.email == e.user.email %>
+    <% if current_user == e.user %>
       <%= button_to "Edit", edit_path(id: e), :class => "button medium", :method => :patch %>
     <% end %>
 
 
 <% end %>
+
