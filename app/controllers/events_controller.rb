@@ -3,7 +3,8 @@ class EventsController < ApplicationController
     @events = Event.all
   end
   def my
-    @events = current_user.events
+    @host_events = current_user.hostevents
+    @orderevents = current_user.events
   end
 
   def new

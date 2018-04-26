@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
-	belongs_to :user
-	has_many :orders, class_name: 'Order'
+	
+	has_many :orders
 	has_many :users, through: :orders
-
+	belongs_to :user
 end
