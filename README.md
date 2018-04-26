@@ -22,13 +22,18 @@ Order/Ticket
 
 
 
-Features:
-● Users can log in
-● Admins can make lectures
-● Users can comment on lectures
-● Users can ask questions
-● Admins can answer questions
-Division of Labor:
-● Ken: Made users
-● Nhi: Made lectures and questions
-● Ethan: Made views and controllers
+Features:  
+● User Login (multiple types of users)  
+● Organizer login  
+● Customer login  
+● Organizer held events and see the all the events that he/she ordered and held  
+● User order tickets  
+● Use stripe gem to do the transaction  
+● User see all the events that he/she ordered  
+  
+Division of Labor:  
+● Shayan: multiple models, devise, and strip implementation  
+● Mike: CSS styling and views  
+● Kyra: Event model views controller DB  
+● Kendal: CSS styling and views   
+
