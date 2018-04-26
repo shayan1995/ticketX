@@ -1,0 +1,82 @@
+
+<head>
+    <title> ticketX </title>
+
+    <%= stylesheet_link_tag "home_page" %> 
+</head>
+
+<body>
+    <div id="navbar-background">
+        <div id="navbar">
+            <div id="website-name">
+                ticketX
+            </div>
+            <div id="search-wrapper">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="full-container">
+
+
+
+
+
+        <div>Events#index</div>
+        <p>Find me in app/views/events/index.html.erb</p>
+        <% if current_user %>
+            <%= button_to "Sign out", destroy_user_session_path, :class => "button medium", :method => :delete %>
+            <% if current_user.fName == "Host" %>
+                <%= button_to "Create", new_path, :class => "button medium", :method => :get %>
+            <% end %>
+        <% else %>
+            <%= button_to "Sign in",  new_user_session_path, :class => "button medium", :method => :get %>
+        <% end %>
+
+
+        <h1>Events I host</h1>
+        <% if @host_events != nil %>
+            <% @host_events.each do |e| %>
+
+                <p>Name: <%=e.name%></p>
+                <p>Location: <%=e.location%></p>
+                <p>Performer: <%=e.performer%></p>
+                <p>Price: <%=e.price%></p>
+                <%= button_to "Details", show_path(id: e), :class => "button medium", :method => :patch %>
+                <%= button_to "Buy", buy_path(id: e), :class => "button medium", :method => :get %>
+                <% if current_user == e.user %>
+                    <%= button_to "Edit", edit_path(id: e), :class => "button medium", :method => :patch %>
+
+                <% end %>
+
+
+            <% end %>
+        <% end %>
+        <h1>Events I Bought</h1>
+        <% if @orderevents != nil%>
+            <% @orderevents.each do |e| %>
+
+                <p>Name: <%=e.name%></p>
+                <p>Location: <%=e.location%></p>
+                <p>Performer: <%=e.performer%></p>
+                <p>Price: <%=e.price%></p>
+                <%= button_to "Details", show_path(id: e), :class => "button medium", :method => :patch %>
+                <%= button_to "Buy", buy_path(id: e), :class => "button medium", :method => :get %>
+                <% if current_user == e.user %>
+                    <%= button_to "Edit", edit_path(id: e), :class => "button medium", :method => :patch %>
+
+                <% end %>
+
+
+            <% end %>
+        <% end %>
+        <%= button_to "Home", root_path, :class => "button medium", :method => :get %>
+
+
+    </div>
+</body>
+
+
+
+

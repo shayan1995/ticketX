@@ -12,8 +12,10 @@
  *
  *= require_tree .
  *= require_self
+ *= require home_page
  */
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@import 'home_page.css';
 
 /* Universal navbar styling */
 .navbar {

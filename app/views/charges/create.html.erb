@@ -1,1 +1,2 @@
-<h2>Thanks, you paid <strong>$5.00</strong>!</h2>
+<h2>Thanks, you paid <strong>$<%= @amount %></strong>!</h2>
+<%= button_to "Home", root_path, :class => "button medium", :method => :get %>

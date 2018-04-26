@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   get 'events/show'
   get 'events/edit', as: "edit"
   get 'events/destroy'
-  get 'events/buy', as: "buy"
+  get 'events/my', as: "my"
+  #get 'events/buy', as: "buy"
 
   devise_for :users
 
@@ -19,7 +20,8 @@ Rails.application.routes.draw do
   patch "events/edit", to:"events#edit"
 
   resources :charges
-
+  get 'charges/new/:id', to: 'charges#new', as: 'buy'
+  post 'charges/:id', to: 'charges#create', as: 'finish'
 
 
   
