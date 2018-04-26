@@ -1,20 +1,23 @@
-<%= form_tag finish_path(:id =>  params[:id]) do %>
-  <article ">
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-    <label class="amount">
-      <span>Amount: $<%= @amount %></span>
-    </label>
-  </article>
+<div id="form" style="width:400px">
+  <%= form_tag finish_path(:id =>  params[:id]) do %>
+    <article style="margin: 10px">
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+      <label class="amount">
+        <span>Event Name: <%= @name %></span><br><br>
+        <span>Amount: $<%= @amount %></span>
+      </label>
+    </article>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="<%= @amount*100 %>"
-          data-locale="auto"></script>
-<% end %>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="A month's subscription"
+            data-amount="<%= @amount*100 %>"
+            data-locale="auto"></script>
+  <% end %>
 
-<%= link_to "Back", :back %>
+  <button id="solebutton" ><%= link_to "Back", :back  %></button>
+</div>

@@ -2,7 +2,7 @@ class ChargesController < ApplicationController
 
   def new
     @amount = Event.find(params[:id]).price
-
+    @name = Event.find(params[:id]).name
   end
 
   def create

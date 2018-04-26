@@ -1,2 +1,4 @@
-<h2>Thanks, you paid <strong>$<%= @amount %></strong>!</h2>
-<%= button_to "Home", root_path, :class => "button medium", :method => :get %>
+<div id="form">
+	<h2>Thanks, you paid <strong>$<%= @amount %></strong>!</h2>
+	<%= button_to "Home", root_path, :id => 'solebutton', :method => :get %>
+</div>
