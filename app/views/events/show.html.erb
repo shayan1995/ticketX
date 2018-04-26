@@ -1,7 +1,7 @@
 <div class="form">
 <% if @o != nil %>
 	<p>You've bought the ticket!</p>
-<% else %>
+<% elsif current_user != nil %>
 	<%= button_to "Buy", buy_path(id: @event), :class => "button medium", :method => :get %>
 <% end %>
 <% if current_user == @event.user %>

@@ -1,7 +1,69 @@
 <!DOCTYPE html>
 <html>
-<head></head>
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= csrf_meta_tags %>
+
+</head>
+
 <body>
-<%= yield %>
+
+<% unless controller_name == 'landing' %>
+
+<% end %>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+        <div align="left" id="company-name">
+            <a href="<%= root_path %>" style="color: white;text-decoration: none;">ticketX</a>
+        </div>
+        <div align="right" style="display: inline-flex;padding: 13px;    float: right;">
+          <% if current_user %>
+              <%= button_to "Sign out", destroy_user_session_path, :id => 'logbutton', :method => :delete %>
+              <%= button_to "My Events", my_path, :id => 'logbutton', :method => :get %>
+              <% if current_user.fName == "Host" %>
+                  <%= button_to "Create", new_path, :id => 'logbutton', :method => :get %>
+              <% end %>
+          <% else %>
+              <%= button_to "Sign in",  new_user_session_path, :id => 'logbutton', :method => :get %>
+          <% end %>
+
+        </div>
+
+
+
+        <!--
+      <button type="button" class="navbar-toggle collapsed"
+              data-toggle="collapse" data-target="#menu-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      -->
+      <%#= link_to root_path, class: 'navbar-brand' %>
+        
+    </div>
+
+
+    <div class="collapse navbar-collapse" id="menu-collapse">
+
+
+
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+
+  <%= yield %>
+</div>
 </body>
 </html>
