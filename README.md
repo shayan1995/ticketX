@@ -1,46 +1,26 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-**SAMPLE WRITEUP**
+# Writeup
 
 Title:​ ticketX  
-Team Members:​ Ken Chen, Nhi Quach, Ethan Lee  
-Demo Link:​ railsdecal.com  
-Idea: ​An application where administrators can create and post new lectures and other users (being
-students) can comment on the lectures and post questions for admins to answer.
-Models and Description:
-User
-● has name, email, and many comments and questions
-● certain Users are Administrators and have lectures
-Lecture
-● has title, topic, and summary text
-Comment
-● has text and belongs to a User
-Question
-● has text, flag to say if it has been answered or not, and belongs to a User
+Team Members:​ Shayan Askarian, Mike Lee, Kyra Chang, Kendal Asprec  
+
+Idea: A web application similar to stubhub where we plan to allow for events to hold safe transactions without the current overhead and hassle that goes into planning and executing an event using the current stubhub and ticketmaster. The biggest difference between our proposal and the ones on the market already would be a more streamlined ui/ux and no transactional fees. 
+
+
+Models and Description:  
+Users  
+● Name, email, ID (foreign key), payment info, and maybe history of events, type of user(normal or host)  
+● For the host user, it’ll Has-many Events  
+
+Events  
+● Title, category(concert, sport, museum..etc), time, price, description, number of people that may attend  
+
+Order/Ticket  
+● Many-to-many: User + Event  
+● Order time  
+● Verification method -> potentially can use a randomly generated and hashed number  
+● Payment method and verification can be done with the gem PAYMENT - https://rubygems.org/gems/payment/versions/1.0.1  
+
+
 
 Features:
 ● Users can log in
