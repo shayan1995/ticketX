@@ -32,8 +32,8 @@ Features:
 ● User see all the events that he/she ordered  
   
 Division of Labor:  
-● Shayan: multiple models, devise, and strip implementation  
+● Shayan: multiple models, devise, and stripe implementation  
 ● Mike: CSS styling and views  
-● Kyra: Event model views controller DB  
+● Kyra: Event Order model, all views+controllers, DB associations 
 ● Kendal: CSS styling and views   
 
