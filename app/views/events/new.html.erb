@@ -1,5 +1,4 @@
-<h1>Events#new</h1>
-<p>Find me in app/views/events/new.html.erb</p>
+<div class="form">
 
 <%= form_tag events_new_path do %>
   <%= label_tag(:name, "Name") %>
@@ -23,4 +22,6 @@
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
   <%= submit_tag("Create") %>
+
+  </div>
 <% end %>
