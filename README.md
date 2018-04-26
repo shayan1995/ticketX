@@ -34,6 +34,6 @@ Features:
 Division of Labor:  
 ● Shayan: multiple models, devise, and stripe implementation  
 ● Mike: CSS styling and views  
-● Kyra: Event Order model, all views+controllers, DB associations 
+● Kyra: Event Order model, all views+controllers, DB associations  
 ● Kendal: CSS styling and views   
 
