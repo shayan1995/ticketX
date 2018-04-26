@@ -1,5 +1,4 @@
-<h1>Events#edit</h1>
-<p>Find me in app/views/events/edit.html.erb</p>
+<div class="form">
 
 <%= form_tag events_edit_path(id:@event) do %>
   <%= label_tag(:name, "Name") %>
@@ -23,4 +22,5 @@
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
   <%= submit_tag("Update") %>
+</div>
 <% end %>
