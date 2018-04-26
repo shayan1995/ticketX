@@ -3,7 +3,7 @@
 <% if @o != nil %>
 	<p>You've bought the ticket!</p>
 <% else %>
-	<%= button_to "Buy", buy_path(id: @event), :class => "button medium", :method => :patch %>
+	<%= button_to "Buy", buy_path(id: @event), :class => "button medium", :method => :get %>
 <% end %>
 <% if current_user == @event.user %>
   <%= button_to "Edit", edit_path(id: @event), :class => "button medium", :method => :patch %>
