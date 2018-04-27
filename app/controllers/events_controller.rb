@@ -11,7 +11,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    if current_user.type = "Host"
+    if current_user.fName = "Host"
       new_event = Event.create(event_params)
       new_event.user = current_user
       if new_event.save
